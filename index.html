@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9e4f3">
+  <title>День рождения — волшебная открытка</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="card">
+    <header class="toolbar">
+      <span class="brand" aria-hidden="true">✦ Маленькое чудо ✦</span>
+      <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false" aria-label="Включить звук">♪ Звук: выкл.</button>
+    </header>
+    <main id="story" aria-live="polite">
+      <section id="intro" class="scene active" aria-label="Начало">
+        <div class="stage intro-stage">
+          <div class="sky-stars" aria-hidden="true">✦ <span>✧</span> ✦ <span>✧</span> ✦</div>
+          <div class="moon" aria-hidden="true"></div>
+          <div class="intro-balloons" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <button id="present" class="present" type="button" aria-label="Открыть подарок">
+            <span class="present-lid"></span><span class="present-box"></span><span class="present-ribbon"></span>
+          </button>
+          <div class="intro-hill" aria-hidden="true"></div>
+        </div>
+        <div class="scene-caption">
+          <h1>Сегодня будет приключение...</h1>
+          <p>Открой подарок, и волшебная история начнётся!</p>
+          <button id="start" class="primary-button" type="button">Начать историю</button>
+        </div>
+      </section>
+      <section id="meadow" class="scene" aria-label="Поиск зверюшек">
+        <div id="meadow-stage" class="stage meadow-stage">
+          <svg class="landscape" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="day-sky" x2="0" y2="1"><stop stop-color="#91dcf2"/><stop offset="1" stop-color="#ecf9cf"/></linearGradient>
+              <linearGradient id="pond-water" x2="0" y2="1"><stop stop-color="#9deaf2"/><stop offset="1" stop-color="#55b7d1"/></linearGradient>
+            </defs>
+            <path fill="url(#day-sky)" d="M0 0h1000v600H0z"/>
+            <circle cx="380" cy="70" r="42" fill="#fff3aa"/>
+            <path fill="#98d68d" d="M0 238Q220 180 390 245T740 205T1000 192V600H0z"/>
+            <path fill="#77be78" d="M0 350Q200 260 435 350T1000 315V600H0z"/>
+            <g fill="#4c946e">
+              <path d="M645 160l42-125 42 125zm60 10 48-148 50 148zm89 10 46-156 48 156zm85 21 49-171 49 171zm-210 33 40-116 43 116zm85 2 39-126 46 126zm88-1 40-125 42 125zm92 25 39-126 42 126z"/>
+            </g>
+            <g fill="none" stroke="#eddbab" stroke-width="36" stroke-linecap="round">
+              <path d="M490 385Q430 325 670 285T790 230"/>
+              <path d="M485 387Q390 352 314 416T175 350"/>
+              <path d="M484 395Q570 457 743 485"/>
+            </g>
+            <g stroke="#68aa61" stroke-width="4" stroke-linecap="round">
+              <path d="M550 267l-7-30m7 30 11-40m42 6-8-42m8 42 12-26m18 41 3-34m22 29-5-32M906 294l-6-31m24 32 7-36m26 62-4-38M562 327l-8-24m23 12 7-24"/>
+            </g>
+            <g id="house">
+              <path d="M58 265h231v165H58z" fill="#ffe4aa" stroke="#b2826f" stroke-width="5"/>
+              <path d="M34 270 173 147l139 123z" fill="#c87585" stroke="#9a5669" stroke-width="7" stroke-linejoin="round"/>
+              <rect x="88" y="300" width="57" height="65" rx="7" fill="#a8def0" stroke="#fff9e1" stroke-width="8"/>
+              <path d="M205 430V316q0-12 12-12h38q12 0 12 12v114" fill="#ac745a"/>
+              <circle cx="251" cy="374" r="5" fill="#ffe7a7"/>
+              <path d="M260 230h84m-74 34h74m-61 32h61m-47 32h47m-71 100 44-202m26 202V227" fill="none" stroke="#94664f" stroke-width="7" stroke-linecap="round"/>
+            </g>
+            <g id="tree">
+              <path d="M92 545q42-120 24-244l34-4q-11 81 4 127l63-66 11 14-70 89 8 84z" fill="#98694f"/>
+              <circle cx="112" cy="315" r="81" fill="#5da963"/><circle cx="184" cy="324" r="64" fill="#6fbb69"/><circle cx="138" cy="252" r="65" fill="#80c876"/>
+              <path d="M179 375v80m48-80v80m-57 0h66" fill="none" stroke="#73536a" stroke-width="5"/>
+            </g>
+            <g id="doghouse">
+              <path d="M297 423h114v90H297z" fill="#e9aa79" stroke="#a96753" stroke-width="5"/>
+              <path d="m281 425 73-65 75 65z" fill="#a8656b" stroke="#864d61" stroke-width="5"/>
+              <path d="M325 513v-48a28 28 0 0 1 56 0v48" fill="#654a50"/>
+            </g>
+            <g id="red-bush">
+              <circle cx="732" cy="251" r="37" fill="#5ba96c"/><circle cx="778" cy="240" r="44" fill="#60ad70"/><circle cx="816" cy="265" r="36" fill="#4d9b64"/>
+              <g fill="#e54d66"><circle cx="725" cy="254" r="7"/><circle cx="769" cy="221" r="7"/><circle cx="798" cy="267" r="7"/><circle cx="785" cy="251" r="6"/></g>
+            </g>
+            <g id="blue-bush">
+              <circle cx="847" cy="316" r="35" fill="#60ad70"/><circle cx="890" cy="310" r="43" fill="#4f9e68"/><circle cx="927" cy="332" r="36" fill="#5eaa6b"/>
+              <g fill="#5569c8"><circle cx="846" cy="323" r="7"/><circle cx="877" cy="286" r="7"/><circle cx="905" cy="331" r="7"/><circle cx="928" cy="319" r="6"/></g>
+            </g>
+            <ellipse cx="835" cy="500" rx="139" ry="65" fill="#daedac"/>
+            <ellipse cx="835" cy="499" rx="120" ry="51" fill="url(#pond-water)"/>
+            <g id="reeds" stroke="#567f4f" stroke-width="5" stroke-linecap="round">
+              <path d="M719 489l-12-78m23 74 8-88m-4 91 24-78m166 85 8-89m-2 85 29-73"/>
+              <path d="M707 425v-32m31 21v-32m20 42v-32m174 28v-34m27 47v-34" stroke="#946649" stroke-width="12"/>
+            </g>
+            <g fill="#ffe995" stroke="#ee9b92" stroke-width="5">
+              <circle cx="642" cy="491" r="9"/><circle cx="673" cy="529" r="9"/><circle cx="976" cy="470" r="9"/>
+            </g>
+            <g id="bear" class="animal">
+              <circle cx="694" cy="166" r="12" fill="#a6745e"/><circle cx="746" cy="164" r="12" fill="#a6745e"/>
+              <circle cx="720" cy="189" r="34" fill="#b98467"/><ellipse cx="720" cy="203" rx="17" ry="12" fill="#ebc09a"/>
+              <circle cx="707" cy="187" r="3"/><circle cx="733" cy="187" r="3"/><circle cx="720" cy="200" r="4" fill="#543e42"/>
+            </g>
+            <g id="birds" class="animal">
+              <g class="bird bird-one" transform="translate(885 298)"><path d="M-9 0q-23-27-32-7 24-4 32 16 8-20 32-16Q12-27-9 0" fill="#4d94c4"/><circle cx="10" cy="5" r="10" fill="#f9de78"/><path d="m20 5 13 4-13 3" fill="#ed9d68"/></g>
+              <g class="bird bird-two" transform="translate(899 299)"><path d="M-9 0q-23-27-32-7 24-4 32 16 8-20 32-16Q12-27-9 0" fill="#4d94c4"/><circle cx="10" cy="5" r="10" fill="#f9de78"/><path d="m20 5 13 4-13 3" fill="#ed9d68"/></g>
+            </g>
+            <g id="dog" class="animal">
+              <ellipse cx="374" cy="489" rx="37" ry="23" fill="#d4996b"/>
+              <circle cx="402" cy="459" r="22" fill="#e6b17f"/>
+              <ellipse cx="386" cy="446" rx="10" ry="19" fill="#a9745c"/>
+              <circle cx="410" cy="457" r="3" fill="#422f3a"/><circle cx="424" cy="467" r="4" fill="#422f3a"/>
+              <path class="dog-tail" d="M343 476q-30-29-14-35" fill="none" stroke="#d4996b" stroke-width="11" stroke-linecap="round"/>
+              <path d="M354 503v14m32-15v15" stroke="#a9745c" stroke-width="9" stroke-linecap="round"/>
+            </g>
+            <g id="frog" class="animal">
+              <ellipse cx="738" cy="466" rx="27" ry="20" fill="#6abd5e"/>
+              <circle cx="725" cy="447" r="9" fill="#6abd5e"/><circle cx="751" cy="447" r="9" fill="#6abd5e"/>
+              <circle cx="725" cy="446" r="3" fill="#273f39"/><circle cx="751" cy="446" r="3" fill="#273f39"/>
+              <path d="M730 467q8 8 16 0" fill="none" stroke="#427f49" stroke-width="3"/>
+            </g>
+          </svg>
+          <div id="girl" class="girl" aria-hidden="true">
+            <svg viewBox="0 0 100 165">
+              <g class="girl-legs" stroke="#5969ad" stroke-width="12" stroke-linecap="round"><path d="M38 119v37m24-37v37"/></g>
+              <path d="M25 151h23m15 0h22" stroke="#a94f80" stroke-width="9" stroke-linecap="round"/>
+              <path d="M25 74q25-10 50 0l3 58H22z" fill="#f481a6"/>
+              <path d="m27 86-15 29m60-29 15 29" stroke="#f6c8a8" stroke-width="11" stroke-linecap="round"/>
+              <circle cx="50" cy="43" r="35" fill="#e9c27e"/>
+              <circle cx="12" cy="30" r="14" fill="#e9c27e"/><circle cx="88" cy="30" r="14" fill="#e9c27e"/>
+              <ellipse cx="50" cy="51" rx="28" ry="30" fill="#ffe2c6"/>
+              <path d="M22 38q1-40 44-28 18 7 14 33-13-4-19-19-13 16-39 14" fill="#e9c27e"/>
+              <circle cx="38" cy="52" r="3" fill="#4294b9"/><circle cx="62" cy="52" r="3" fill="#4294b9"/>
+              <path d="M43 65q7 8 15 0" fill="none" stroke="#bf6d76" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="29" cy="62" r="5" fill="#f7a7a6" opacity=".7"/><circle cx="71" cy="62" r="5" fill="#f7a7a6" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="hotspots">
+            <button class="hotspot red-hotspot" type="button" data-place="RED" aria-label="Куст с красными ягодами"></button>
+            <button class="hotspot blue-hotspot" type="button" data-place="BLUE" aria-label="Куст с синими ягодами"></button>
+            <button class="hotspot meadow-hotspot" type="button" data-place="GRASS" aria-label="Луг с высокой травой"></button>
+            <button class="hotspot dog-hotspot" type="button" data-place="DOG" aria-label="Конура"></button>
+            <button class="hotspot reeds-hotspot" type="button" data-place="FROG" aria-label="Камыши у пруда"></button>
+            <button id="house-hotspot" class="hotspot house-hotspot" type="button" data-place="HOUSE" aria-label="Домик, откроется после встречи с двумя зверюшками" disabled></button>
+          </div>
+        </div>
+        <div class="scene-caption">
+          <h1 id="meadow-prompt">Найди зверюшек!</h1>
+          <p id="meadow-status" role="status">Найдено зверюшек: 0 из 2 для входа в домик.</p>
+        </div>
+      </section>
+      <section id="cake" class="scene" aria-label="Праздничный торт">
+        <div id="cake-stage" class="stage cake-stage">
+          <div class="cake-stars" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
+          <div class="cake-balloons" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="cake-art">
+            <div class="candles" role="group" aria-label="Свечи на торте">
+              <button class="candle" type="button" aria-label="Задуть свечу 1"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" type="button" aria-label="Задуть свечу 2"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" type="button" aria-label="Задуть свечу 3"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" type="button" aria-label="Задуть свечу 4"><span class="flame"></span><span class="wick"></span></button>
+              <button class="candle" type="button" aria-label="Задуть свечу 5"><span class="flame"></span><span class="wick"></span></button>
+            </div>
+            <div class="cake-top"><span class="cake-icing"></span></div>
+            <div class="cake-bottom"><span class="cake-icing"></span></div>
+            <div class="cake-plate"></div>
+          </div>
+          <div id="celebration" class="celebration" aria-hidden="true">Ура! ✨</div>
+          <div id="confetti" class="confetti" aria-hidden="true"></div>
+        </div>
+        <div class="scene-caption">
+          <h1 id="birthday-heading"></h1>
+          <p id="cake-instruction" role="status">Нажми на каждую свечку и задуй её!</p>
+        </div>
+      </section>
+      <section id="final" class="scene" aria-label="Поздравление">
+        <div class="stage final-stage">
+          <div class="final-decor" aria-hidden="true">✦ 🎈 ✨ 🎈 ✦</div>
+          <div class="final-note">
+            <span aria-hidden="true">♥</span>
+            <h1 id="final-heading"></h1>
+            <p id="final-message"></p>
+            <span aria-hidden="true">♥</span>
+          </div>
+        </div>
+        <div class="scene-caption"><button id="restart" class="primary-button" type="button">Начать сначала</button></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
